@@ -1,7 +1,5 @@
 # Aplicatie_proiect_TW
 
-# Aplicatie_proiect_TW
-
 Tema 5 - Gestionare profile candidati integrat cu LinkedIn (sau aplicare la un job)
 
 Cerinte + punctaj:
