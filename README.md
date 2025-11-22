@@ -1,4 +1,4 @@
-# Aplicatie_proiect_TW
+# Aplicatie_proiect_TW - Luchian Raluca-Alexandra - grupa 1161
 
 Tema 5 - Gestionare profile candidati integrat cu LinkedIn (sau aplicare la un job)
 
