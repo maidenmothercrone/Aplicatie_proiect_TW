@@ -1,0 +1,26 @@
+{
+  "name": "aplicatie_proiect_tw",
+  "version": "1.0.0",
+  "description": "Web application for managing candidates for a job",
+  "keywords": [
+    "API",
+    "Linkedin",
+    "Candidate",
+    "managing"
+  ],
+  "homepage": "https://github.com/maidenmothercrone/Aplicatie_proiect_TW#readme",
+  "bugs": {
+    "url": "https://github.com/maidenmothercrone/Aplicatie_proiect_TW/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maidenmothercrone/Aplicatie_proiect_TW.git"
+  },
+  "license": "ISC",
+  "author": "Raluca-Alexandra Luchian",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "npm test"
+  }
+}
