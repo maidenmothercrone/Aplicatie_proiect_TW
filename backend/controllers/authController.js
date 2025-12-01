@@ -32,7 +32,7 @@ exports.login = async (req, res) => {
         }
 
         //create simple session token
-        const token = '${user.id}-${Date.now()}';
+        const token = `${user.id}-${Date.now()}`;
         res.status(200).json({message: 'Login successful', token, id: user.id, email: user.email, firstName: user.firstName});
     } catch (error) {
         res.status(500).json({message: 'Server error', error: error.message});

@@ -1,23 +1,25 @@
+require('dotenv').config();
 const express = require('express');
-const Sequelize = require('sequelize');
 const cors = require('cors');
+const sequelize = require('./config/database');
 
 //route imports
+const linkedinAuthRoutes = require('./routes/linkedinAuth');
 const authRoutes = require('./routes/auth');
 const candidateRoutes = require('./routes/candidates');
 const experienceRoutes = require('./routes/experience');
+
+const User = require('./models/User');
+const Candidate = require('./models/Candidate');
+const Experience = require('./models/Experience');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 const port = 5000;
-const sequelize = new Sequelize  ({
-    dialect: 'sqlite',
-    storage: 'database/database.sqlite',
-    logging: false
-})
 
 //register routes
+app.use('/api/auth/linkedin', linkedinAuthRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/candidates', candidateRoutes);
 app.use('/api/experience', experienceRoutes);
@@ -30,10 +32,6 @@ sequelize.sync()
         console.error('Unable to create tables, shutting down...', err);
         process.exit(1);
     });
-
-const User = require('./models/User');
-const Candidate = require('./models/Candidate');
-const Experience = require('./models/Experience');
 
 //testing routes
 app.get('/api/test', (req, res) => {

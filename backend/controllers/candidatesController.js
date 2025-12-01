@@ -16,7 +16,7 @@ exports.getCandidates = async (req, res) => {
 exports.createCandidate = async (req, res) => {
     try {
         const userId = req.userId; //from auth middleware
-        const {firstName, lastName, email, phoneNumber, summary, status} = req.body;
+        const {firstName, lastName, email, phoneNumber, summary} = req.body;
 
         const candidate = await Candidate.create({
             userId,
@@ -24,8 +24,7 @@ exports.createCandidate = async (req, res) => {
             lastName,
             email,
             phoneNumber,
-            summary,
-            status: status || 'active'
+            summary: summary || 'active'
         });
         res.status(201).json({message: 'Candidate created successfully', candidate});
     } catch (error) {
@@ -58,7 +57,7 @@ exports.updateCandidate = async (req, res) => {
     try {
         const {id} = req.params;
         const userId = req.userId; //from auth middleware
-        const {firstName, lastName, email, phoneNumber, summary, status} = req.body;
+        const {firstName, lastName, email, phoneNumber, summary} = req.body;
 
         const candidate = await Candidate.findOne({where: {id, userId}});
         if(!candidate){
@@ -70,8 +69,7 @@ exports.updateCandidate = async (req, res) => {
             lastName: lastName || candidate.lastName,
             email: email || candidate.email,
             phoneNumber: phoneNumber || candidate.phoneNumber,
-            summary: summary || candidate.summary,
-            status: status || candidate.status
+            summary: summary || candidate.summary
         });
         res.status(200).json({message: 'Candidate updated successfully', candidate});
     } catch (error) {
