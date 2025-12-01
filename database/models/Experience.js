@@ -1,5 +1,5 @@
 const {DataTypes} = require('sequelize');
-const {sequelize} = require('../server');
+const {sequelize} = require('../config/database');
 const Candidate = require('./Candidate');
 
 //Experience model definition - working experiences associated with Candidates

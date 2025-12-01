@@ -1,7 +1,6 @@
-const {DataTypes} = require('sequelize');
-const {sequelize} = require('../server');
-const { table } = require('console');
-const User = sequelize.define('User');
+﻿const {DataTypes} = require('sequelize');
+const sequelize = require('../config/database');
+const User = require('./User');
 
 //Candidate model definition - User -> Candidate relationship
 
